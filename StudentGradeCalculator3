@@ -1,0 +1,45 @@
+// Name- Anurag Bonde
+import java.util.Scanner;
+
+public class StudentGradeCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter marks obtained in Math (out of 100): ");
+        double mathMarks = scanner.nextDouble();
+
+        System.out.print("Enter marks obtained in Science (out of 100): ");
+        double scienceMarks = scanner.nextDouble();
+
+        System.out.print("Enter marks obtained in English (out of 100): ");
+        double englishMarks = scanner.nextDouble();
+
+        // Calculate Total Marks
+        double totalMarks = mathMarks + scienceMarks + englishMarks;
+
+        // Calculate Average Percentage
+        double averagePercentage = totalMarks / 3;
+
+        // Assign Grade based on the average percentage
+        char grade = calculateGrade(averagePercentage);
+
+        // Display Results
+        System.out.println("\nTotal Marks: " + totalMarks);
+        System.out.println("Average Percentage: " + averagePercentage + "%");
+        System.out.println("Grade: " + grade);
+    }
+
+    private static char calculateGrade(double averagePercentage) {
+        if (averagePercentage >= 90) {
+            return 'A';
+        } else if (averagePercentage >= 80) {
+            return 'B';
+        } else if (averagePercentage >= 70) {
+            return 'C';
+        } else if (averagePercentage >= 60) {
+            return 'D';
+        } else {
+            return 'F';
+        }
+    }
+}
